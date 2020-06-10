@@ -1,0 +1,15 @@
+[Unit]
+Description=example-app
+After=network.target syslog.target
+
+[Service]
+Type=simple
+PermissionsStartOnly=yes
+User=root
+ExecStart=/bin/gobgpd 
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+
