@@ -38,7 +38,7 @@ rm -rf vendor
 # set up temporary build gopath, and put our directory there
 mkdir -p ./_build/src/
 #rsync -az --exclude=_build/ ./ ./_build/src/%{name}-%{version} 
-ln -s $(pwd) ./_build/src/
+ln -s $(pwd) ./_build/src/%{name}-%{version}
 
 export GOPATH=$(pwd)/_build 
 cd ./_build/src/%{name}-%{version} 

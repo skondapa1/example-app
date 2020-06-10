@@ -1,10 +1,14 @@
 #This is a sample app to show how to build go code and rpm with go1.13
 #Built from ideas from : https://gist.github.com/jollyroger/f89c9a5954009a2254667e00ca0d0219
 
-There are 2 ways to build..
-  1. GOPATH has to be set to build using the Makefile. 
-  2. rpmbuild -ba ./example-app.spec --build-in-place --nodeps
+To build the app and the rpm - 
+  1. rpmbuild -ba ./example-app.spec --build-in-place --nodeps
 
+You can also build with just running make..
+  1. The current directory 'example_app' must be under <src_tree>/src
+  2. GOPATH has to be set to <src_tree>
+  3. run ./go-setup.sh to download go1.13 and download all the dependencies using 'dep init'
+  4. make
 
 #To integrate with mock...
 Use mock to build the .srpm: 
